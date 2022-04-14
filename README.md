@@ -1,27 +1,44 @@
-# LeaguacyFRONT
+<p align="center"><img width=50% src="./src/assets/leaguacy-logo.svg"></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p align="center"><img src="https://img.shields.io/badge/Angular-13.3.0-fdff00?style=for-the-badge&logo=Angular">&nbsp;
+<img src="https://img.shields.io/badge/Node-16.14.2-fdff00?style=for-the-badge&logo=Node">&nbsp;
+<img src="https://img.shields.io/badge/Npm-8.5.0-fdff00?style=for-the-badge&logo=Npm"></p>
 
-## Code scaffolding
+**Leaguacy est une plateforme offrant la possibilité de créer une équipe sportive dans l'objectif d'affronter des adversaires de niveau équivalent. Lorsque vous gagnez, votre équipe monte dans le classement. À l'inverse, quand vous perdez, vous descendez. À la fin d'une saison, les meilleures équipes gagnent des prix.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## ⚡️ Quick start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Prémices
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Avant de commencer, il est important d'installer les outils nécessaires au bon fonctionnement du projet :
+- [Node](https://nodejs.org/en/) Nous aurons besoin de **Node** pour faire fonctionner le projet
+- [Angular CLI](https://angular.io/cli) Nous utiliserons **Angular CLI** pour lancer le projet localement
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### ✅ Premier lancement
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Suivez les instructions ci-dessous pour mettre en place l'environnement adéquat au bon lancement du projet :
+
+```sh
+mkdir Leaguacy
+cd Leaguacy
+git clone https://github.com/Tizianogh/Leaguacy-FRONT.git
+```
+
+Après avoir clone le projet, exécutez les commandes suivantes : 
+```shell
+cd Leaguacy-API
+npm install
+```
+
+
+### 🏁 Lancement du projet
+
+
+Pour lancer le projet, exécutez la commande ``ng serve``.
