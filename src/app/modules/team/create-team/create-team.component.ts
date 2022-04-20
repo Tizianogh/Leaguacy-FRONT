@@ -1,4 +1,10 @@
 import {Component, OnInit} from '@angular/core';
+import {CreateTeamModalComponent} from "../create-team-modal/create-team-modal.component";
+import {MatDialog} from "@angular/material/dialog";
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 @Component({
   selector: 'app-create-team',
@@ -7,7 +13,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreateTeamComponent implements OnInit {
 
-  constructor() {
+  constructor(public modal: MatDialog) {
+  }
+
+  openDialog() {
+    this.modal.open(CreateTeamModalComponent, {
+      data: {
+        animal: 'panda',
+      },
+    });
   }
 
   ngOnInit(): void {
