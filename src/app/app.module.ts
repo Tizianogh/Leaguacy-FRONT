@@ -7,6 +7,9 @@ import {HomeComponent} from './home/home.component';
 import {TeamModule} from './modules/team/team.module';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from "@angular/forms";
+import {LeaguesComponent} from "./modules/leagues/leagues.component";
+import { LeagueDetailComponent } from './league-detail/league-detail.component';
 
 
 @NgModule({
@@ -14,6 +17,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    LeaguesComponent,
+    LeagueDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TeamModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

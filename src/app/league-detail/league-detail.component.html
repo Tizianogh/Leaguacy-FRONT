@@ -1,0 +1,8 @@
+<div *ngIf="league">
+  <h2>{{league.title | uppercase}} Détails</h2>
+  <div>id: {{league.uuid}}</div>
+  <div>
+    <label for="league-title">League Title:</label>
+    <input id="league-title" [(ngModel)]="league.title" placeholder="title">
+  </div>
+</div>

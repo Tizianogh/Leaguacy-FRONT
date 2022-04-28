@@ -1,0 +1,13 @@
+<h2>LIEST DES LIGUES</h2>
+
+<ul class = "leagues">
+  <li li *ngFor="let league of leagues">
+    <button  [class.selected]="league === selectedLeague" type="button" (click)="onSelect(league)">
+      <span class="badge">{{league.title}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-league-detail [league]="selectedLeague"></app-league-detail>
+
+
