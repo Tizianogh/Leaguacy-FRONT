@@ -1,0 +1,25 @@
+.carroussel {
+  box-shadow: 7px 4px 7px 5px grey;
+}
+
+.items {
+  display: flex;
+  position: center;
+  align-items: center;
+  overflow-x: hidden;
+   text-align: center;
+}
+
+.item-content {
+  margin: auto;
+}
+#carouselExampleControls{
+  margin: auto;
+  box-shadow: 7px 4px 7px 5px grey;
+}
+.card mb-3{
+  margin-left: 20%;
+}
+.banner{
+  padding: 2%;
+}
