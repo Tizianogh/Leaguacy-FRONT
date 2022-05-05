@@ -10,6 +10,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from "@angular/forms";
 import {LeaguesComponent} from "./modules/leagues/leagues.component";
 import { LeagueDetailComponent } from './league-detail/league-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { LeagueDetailComponent } from './league-detail/league-detail.component';
     HomeComponent,
     LeaguesComponent,
     LeagueDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

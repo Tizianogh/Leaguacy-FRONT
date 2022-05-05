@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { League } from "../league";
+import {ActivatedRoute} from "@angular/router";
+import {LeagueService} from "../league.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-league-detail',
@@ -8,10 +11,24 @@ import { League } from "../league";
 })
 export class LeagueDetailComponent implements OnInit {
 
-  @Input() league?: League
-  constructor() { }
+  league:League | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private leagueService: LeagueService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
+    this.getLeague();
+  }
+
+  getLeague(): void{
+    const uuid = String(this.route.snapshot.paramMap.get('uuid'));
+    this.leagueService.getLeague(uuid).subscribe(league => this.league = league);
+  }
+  goBack(): void{
+    this.location.back();
   }
 
 }

@@ -1,0 +1,6 @@
+<h2>Top Leagues</h2>
+<div class="leagues-menu">
+  <a *ngFor="let league of leagues" routerLink="/detail/{{league.uuid}}">
+    {{league.title}}
+  </a>
+</div>
