@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,12 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
+
+  constructor(private primengConfig: PrimeNGConfig) {}
+
   title = 'Leaguacy-FRONT';
+
+  ngOnInit() {
+    this.primengConfig.ripple = true;
+  }
 }
