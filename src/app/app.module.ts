@@ -4,9 +4,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {HomeComponent} from './home/home.component';
-import {TeamModule} from './modules/team/team.module';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TeamModule} from "./modules/team/team.module";
 
 
 @NgModule({
@@ -18,9 +18,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TeamModule,
     BrowserAnimationsModule,
     MaterialModule,
+    TeamModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

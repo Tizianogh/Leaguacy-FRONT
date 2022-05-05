@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateTeamModalComponent } from './create-team-modal.component';
+import { SquadRecapitulatifComponent } from './squad-recapitulatif.component';
 
-describe('CreateTeamModalComponent', () => {
-  let component: CreateTeamModalComponent;
-  let fixture: ComponentFixture<CreateTeamModalComponent>;
+describe('SquadRecapitulatifComponent', () => {
+  let component: SquadRecapitulatifComponent;
+  let fixture: ComponentFixture<SquadRecapitulatifComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateTeamModalComponent ]
+      declarations: [ SquadRecapitulatifComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateTeamModalComponent);
+    fixture = TestBed.createComponent(SquadRecapitulatifComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
