@@ -7,6 +7,10 @@ import {HomeComponent} from './home/home.component';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TeamModule} from "./modules/team/team.module";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import {TeamModule} from "./modules/team/team.module";
     BrowserAnimationsModule,
     MaterialModule,
     TeamModule,
-  ],
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })
