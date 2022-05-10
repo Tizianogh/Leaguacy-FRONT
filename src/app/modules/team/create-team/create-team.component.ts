@@ -62,10 +62,6 @@ export class CreateTeamComponent implements OnInit {
       routerLink: 'recapitulatif'
     }
     ];
-
-    // this.subscription = this.ticketService.paymentComplete$.subscribe((personalInformation) =>{
-    // this.messageService.add({severity:'success', summary:'Order submitted', detail: 'Dear, ' + personalInformation.firstname + ' ' + personalInformation.lastname + ' your order completed.'});
-    // });
   }
 
   ngOnDestroy() {

@@ -4,8 +4,6 @@ import {CreateTeamComponent} from "./create-team/create-team.component";
 import {SquadInformationComponent} from "./squad-information/squad-information.component";
 import {SquadRecapitulatifComponent} from "./squad-recapitulatif/squad-recapitulatif.component";
 
-const routes: Routes = [];
-
 @NgModule({
   imports: [RouterModule.forChild([
     {

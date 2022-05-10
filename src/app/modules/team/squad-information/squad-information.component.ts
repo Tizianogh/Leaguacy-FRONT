@@ -27,5 +27,4 @@ export class SquadInformationComponent implements OnInit {
 
     this.submitted = true;
   }
-
 }
