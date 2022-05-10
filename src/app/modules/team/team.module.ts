@@ -7,17 +7,13 @@ import {DialogModule} from "primeng/dialog";
 import {ButtonModule} from "primeng/button";
 import {StepsModule} from "primeng/steps";
 import {ToastModule} from "primeng/toast";
-import { SquadInformationComponent } from './squad-information/squad-information.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardModule} from "primeng/card";
-import { SquadRecapitulatifComponent } from './squad-recapitulatif/squad-recapitulatif.component';
 
 
 @NgModule({
   declarations: [
     CreateTeamComponent,
-    SquadInformationComponent,
-    SquadRecapitulatifComponent,
   ],
   exports: [
     CreateTeamComponent
@@ -30,7 +26,8 @@ import { SquadRecapitulatifComponent } from './squad-recapitulatif/squad-recapit
     StepsModule,
     ToastModule,
     FormsModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule
   ]
 })
 export class TeamModule {
