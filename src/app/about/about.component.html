@@ -5,74 +5,42 @@
   <div class="question-panel">
     <mat-accordion class="question-liste">
       <h1 class="sous-titre">Besoin d'aide ? <br> Trouver la réponse à toutes vos questions juste ici ⬇</h1>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <      <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-          <mat-panel-title>Comment créer une publication ?</mat-panel-title>
+          <mat-panel-title>Comment créer un compte ?</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Pour créer une publication,il faut cliquer sur le petit ➕ présent en haut a droite sur la barre de navigation. Par la suite une pop-up va s'afficher. Je commence tout d'abord par selectionner une image dans ma bibliothéque puis je clique sur "Next".
-        <p>On y est presque, c'est la derniere ligne droite.Une fois l'image, le titre, et la description renseignés j'appuie sur le bouton "Next", et je peux enfin entrer l'adresse en respectant le format proposé.</p>
-        <p>Il est aussi important de savoir que je peux annuler("Annuler") ou retourner à l'étape d'avant 🔙 peu importe où je suis dans la création de ma publication (Avant que la photo ne soit posté). </p>
+        <p>Pour créer un compte , il suffit d'ouvrir la barre de navigation et cliquer sur le bouton create an account, aprés ça je dois saisir un identifiant ainsi qu'un mot de passe.</p>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-          <mat-panel-title>Où retrouver ma publication ?</mat-panel-title>
+          <mat-panel-title>Comment créer une équipe ?</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Pour retrouver mon tout nouveau post, il suffit d'actualiser ma page <a class="lien"routerLink="/feed">feed 🧭</a>,et je retrouve directement ma dernière publication.</p>
+        <p>Il faut ouvrir le la barre de navigation, cliquer sur le bouton create a Team.Aprés cça vous allez être rediriger vers une page dans laquelle il faut saisir le nom de l'équipe et le soumettre </p>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-          <mat-panel-title>Comment ajouter une destination à mon itinéraire ?</mat-panel-title>
+          <mat-panel-title>Comment se connecter?</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Pour ajouter une destination à mon trip, je dois simplement liker la publication qui possède la destination voulue( Via le petit icône ❤)</p>
+        <p>Pour se connecter à con compte utilisateur, il suffit d'ouvrir la barre de navigation et cliquer sur le bouton Login, aprés ça je dois saisir un identifiant ainsi qu'un mot de passe </p>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-          <mat-panel-title>Où consulter les publications likés ?</mat-panel-title>
+          <mat-panel-title>Comment créer une league ?</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Tout à gauche, sur ma page Feed, j'ai un petit panel qui affiche chacune des publications que j'ai liké. </p>
+        <p>Afin de créer une League, il vous suffit d'ouvrir la barre de navigation à gauche de l'écran, puis de cliquer sur le bouron create match</p>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <mat-expansion-panel  class="panel"(opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-          <mat-panel-title>Puis-je modifier l'ordre des destinations?</mat-panel-title>
+          <mat-panel-title>Est ce que je peux changer de League ?</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Oui bien sûr.C'est très simple.Je peux via ma souris ou mon pavé tactile, attraper une destination et la relacher là où je le souhaite.</p>
-        <p>La liste changera instantanément.</p>
+        <p>Vous êtes en effet libre de changer de League si vous en avez envie</p>
       </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>Comment je fais pour accéder à mon voyage ?</mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>Une fois toutes mes publications triées, il me suffit de cliquer sur le bouton "Voir mon trip". Cela va directement me diriger vers la carte et mon itinéraire.</p>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>Comment je fais pour effacer mon voyage ? </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>Sur mon petit panel à gauche, il y'a un bouton "clear" qui va permettre d'effacer la liste de toutes les publications.</p>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>A quoi correspondent les point sur la map ?</mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>Les points sur la carte correspondent aux differentes étapes de mon trajet, si je clique sur un de ces point, cela va zoomer dessus. </p>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>L'affichage de la durée correspond à quoi ?</mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>La durée que l'on peut voir dans le menu à gauche sur ma map, correspond à la durée totale de ma premiere destination à ma dernière destination en voiture. </p>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>Comment nous contacter ?</mat-panel-title>

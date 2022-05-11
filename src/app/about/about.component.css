@@ -1,7 +1,5 @@
-.header {
-  background-color: hsla(180, 65%, 35%, 0.35);
-  padding: 2%;
-  border-radius: 3%;
+.panel{
+  background-color: rgba(194, 120, 234, 0.44);
 }
 
 p {
@@ -17,18 +15,18 @@ p {
   font-family: system-ui;
   padding-bottom: 3%;
   font-weight: 600;
-  color: rgba(255, 106, 0, 0.66);
+  color: rgb(255, 106, 0);
 }
 
 .question-panel {
+  background-color: black;
   margin: auto;
   margin-top: 4%;
   display: flex;
   width: 75%;
   position: center;
   padding: 3%;
-  box-shadow: 7px 4px 7px 5px grey;
-  border-radius: 2%;
+  border-radius: 1%;
   font-family: system-ui;
 }
 
@@ -37,18 +35,17 @@ p {
   margin: auto;
   position: center;
   padding: 3%;
-}
+ }
 
 mat-panel-title {
   font-weight: 550;
   font-size: 25px;
   margin: 1%;
-
-}
+  }
 
 .mat-form-field {
   margin-left: 8px;
-}
+ }
 
 .separation {
   margin: 2%;
@@ -62,28 +59,27 @@ mat-panel-title {
   vertical-align: middle;
   text-align: center;
   color: #691485;
-  font-size: 60px;
+  font-size: 70px;
   position: center;
   padding-top: 3%;
-  font-weight: 550;
+  font-weight: 700;
 }
 
 .contact {
   display: flex;
-  box-shadow: 7px 4px 7px 5px grey;
-  border-radius: 2%;
-  width: 80%;
+   width: 80%;
   margin: auto;
   position: center;
   height: 130%;
   margin-top: 3%;
+  background-color: black;
 }
 
 .contact-form {
   margin: auto;
   display: flex;
   width: 100%;
-  height: 130%;
+  height: 120%;
   position: center;
   padding-top: 2%;
 }

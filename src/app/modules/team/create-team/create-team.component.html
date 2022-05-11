@@ -1,9 +1,11 @@
 <section class="section1">
+    </section>
+<section class="section2">
 <section class="container">
 <div class="container square-box d-flex justify-content-center align-items-center">
-  <form [formGroup]="squadForm" class="row g-3" (ngSubmit)="onSubmit()">
+  <form [formGroup]="squadForm" class="Formulaire" (ngSubmit)="onSubmit()">
     <div class="form">
-      <label for="idSquadName" class="form-label">Name of your team</label>
+      <label for="idSquadName" class="form-label">Create your own Team</label>
       <input type="text" class="form-control" id="idSquadName" placeholder="Pick a name for your Team" formControlName="squadName"
              [ngClass]="{ 'is-invalid': submitted && f.squadName.errors }">
     </div>
@@ -11,11 +13,14 @@
       <div *ngIf="f.squadName.errors.required">Le nom de l'équipe est requis</div>
       <div *ngIf="f.squadName.errors.minlength">Le nom de l'équipe doit avoir au minimum 5 caractères</div>
     </div>
-    <div class="text-center">
-      <button class="button">Créer</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="text-center">      &nbsp;
       <button class="button2" type="reset" (click)="onReset()">Reset</button>
+      <button class="button">Créer</button>&nbsp;&nbsp;&nbsp;
     </div>
   </form>
 </div>
 </section>
 </section>
+<div>
+  <p class="cachee">SALUT</p>
+</div>

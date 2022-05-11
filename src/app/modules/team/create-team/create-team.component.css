@@ -1,55 +1,68 @@
 .section1{
-  background-color: #f5f2f2;
-
+  background-image:url("src/assets/logofinal.png");
+  height:30%;
+  font-weight:700;
+  font-size:50px;
+  color: black;
+  margin-bottom:2%
 }
+
 .text-center{
   color: #691485;
   font-size: 60px;
 }
 .container{
-  padding-top: 5%;
-  position:center;
+    position:center;
   flex-direction: row;
-  margin-left: 200px;
- }
+  background-color: rgb(5, 5, 5);
+    }
+
 .form{
-  box-shadow: 7px 4px 7px 5px grey;
-    background-color: rgba(255, 106, 0, 0.66);
-    height: 40em;
+    height: 30em;
   width: 50em;
   flex-direction: inherit;
   padding:15%;
   border-radius: 5%;
-  margin-left: 13px;
+  margin:auto;
+  padding-bottom:10%
+
 }
 .form-label{
-  font-size: 42px;
+   font-size: 48px;
   font-weight:700;
   margin: 5%;
+  color: #fff9f9;
 }
 .form-control{
-  margin:4%;
   border-radius: 4%;
-  font-size:34px;
+  font-size:38px;
   margin-top:10%;
+
 }
 .button{
   position:center;
-  margin: 4%;
   font-size: 30px;
-  padding:3%;
-  background-color: rgb(166, 100, 237);
-  border-radius: 7%;
-  box-shadow: 4px 4px 7px 5px rgba(128, 128, 128, 0.76);
-  border-color: transparent;
+  font-weight: 500;
+  background-color: rgb(181, 136, 236);
+  border-radius: 4%;
+  margin-bottom: 3%;
+  margin-bottom: 3%;
+  margin:3%;
+  width:30%;
 }
+
 .button2{
   position:center;
-  margin: 4%;
+  font-weight: 500;
+   font-size: 30px;
+  width:30%;
+  background-color: rgb(172, 142, 197);
+  border-radius: 4%;
+  margin-bottom: 3%;
+  margin:3%
+
+}
+.cachee{
   font-size: 30px;
-  padding:3%;
-  background-color: rgba(166, 100, 237, 0.5);
-  border-radius: 7%;
-  box-shadow: 4px 4px 7px 5px rgba(128, 128, 128, 0.76);
-  border-color: transparent;
+  color:white;
 }

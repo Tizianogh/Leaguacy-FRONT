@@ -1,7 +1,12 @@
 .carroussel {
-  box-shadow: 7px 4px 7px 5px grey;
 }
-
+.title{
+  font-weight:700;
+  font-size:90px;
+  color: rgb(255, 106, 0);
+  padding:2%;
+  text-align:center;
+}
 .items {
   display: flex;
   position: center;
@@ -9,18 +14,17 @@
   overflow-x: hidden;
    text-align: center;
 }
-
 .item-content {
   margin: auto;
 }
+
 #carouselExampleControls{
   margin: auto;
-  box-shadow: 7px 4px 7px 5px grey;
-}
-.card mb-3{
-  margin-left: 20%;
+   border-top-left-radius: 2%;
+  border-top-right-radius: 2%
 }
 .banner{
-  padding: 2%;
-  margin-left: 200px;
+  padding-left:2%;
+  padding-right: 2%;
+  padding-bottom: 6%;
 }
