@@ -14,27 +14,31 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {CommonModule} from "@angular/common";
+import { AboutComponent } from './about/about.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    TeamModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-  ],
+    HomeComponent,
+    AboutComponent,],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        TeamModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDividerModule,
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        MatExpansionModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
