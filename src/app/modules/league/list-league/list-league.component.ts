@@ -20,6 +20,7 @@ export class ListLeagueComponent implements OnInit {
 
   private dataSubject = new BehaviorSubject<Response<League>>(null);
 
+
   constructor(private leagueService: LeagueService, private toast: ToastService, private router: Router) {
   }
 

@@ -12,6 +12,13 @@
   font-size: 60px;
 }
 .container{
+    position:center;
+  flex-direction: row;
+  background-color: rgb(5, 5, 5);
+    }
+
+.form{
+   height: 30em;
   position:center;
   flex-direction: row;
   background-color: rgb(5, 5, 5);
@@ -28,7 +35,8 @@
 
 }
 .form-label{
-  font-size: 48px;
+   font-size: 48px;
+
   font-weight:700;
   margin: 5%;
   color: #fff9f9;
@@ -64,4 +72,5 @@
 }
 .cachee{
   font-size: 30px;
-  col
+  color:white;
+}
