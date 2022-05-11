@@ -3,7 +3,6 @@ import {Player} from "../../model/Player";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, map, Observable, throwError} from "rxjs";
 import {environment} from "../../../environments/environment";
-import {Response} from "../../model/Response";
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +10,16 @@ import {Response} from "../../model/Response";
 export class PlayerService {
   private readonly apiUrl = `${environment.APIEndpoint}`
   isLoggedin: boolean = false;
-  private currentUserSubject: BehaviorSubject<Response<Player>>;
-  public currentUser: Observable<Response<Player>>;
+  private currentUserSubject: BehaviorSubject<Player>;
+  public currentUser: Observable<Player>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<Response<Player>>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUserSubject = new BehaviorSubject<Player>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
   login(player: Player) {
-    return this.http.post<any>(`${this.apiUrl}/sign-in`, player)
+    return this.http.post<Player>(`${this.apiUrl}/sign-in`, player)
       .pipe(map(user => {
         console.log(user)
         localStorage.setItem('currentUser', JSON.stringify(user));
@@ -34,7 +33,7 @@ export class PlayerService {
     this.currentUserSubject.next(null);
   }
 
-  public get currentUserValue(): Response<Player> {
+  public get currentUserValue(): Player {
     return this.currentUserSubject.value;
   }
 

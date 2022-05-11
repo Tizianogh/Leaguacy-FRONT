@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+body{
+  background-color: #4444;
+}
 
 .leagues {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
 }
+
+.league{
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 1rem 10rem;
+  background: #4c1070;
+  color: #4c1070;
+}
+
 
 .league-wrapper {
   display:flex;
