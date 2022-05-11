@@ -1,0 +1,17 @@
+<div *ngIf="league">
+  <h2>{{league.title | uppercase}} Détails</h2>
+  <div><span>id: </span> {{league.uuidLeague}}</div>
+  <div>
+    <label for="league-title">League Title:</label>
+    <input id="league-title" [(ngModel)]="league.title"
+           placeholder="League Title">
+  </div>
+  <div *ngFor="let squad of league.squads">
+    {{squad.uuidSquad}}
+    {{squad.squadName}}
+    {{squad.created}}
+    {{squad.updated}}
+  </div>
+</div>
+<button type="button" (click)="goBack()">go back</button>
+

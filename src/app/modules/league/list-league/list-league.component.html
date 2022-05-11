@@ -1,13 +1,31 @@
 <h1 class="text-center">Liste des différentes ligues</h1>
 <br/>
-
-<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
-  <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
-    <div *ngFor="let league of appState.appData.data.results" class="card">
-      <button>{{league.title}}</button>
-    </div>
+<input class="search-bar" tabindex="0" placeholder="Rechercher une ligue" type="text" name="leagueSearch">
+<ul class="leagues">
+  <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
+    <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
+      <li *ngFor="let league of appState.appData.data.results">
+        <div>
+          <a routerLink="/details/{{league.uuidLeague}}">
+            <div class="league-wrapper" [ngStyle]="{'background-image': 'url(https://media.istockphoto.com/photos/tennis-court-at-night-picture-id530856465?k=20&m=530856465&s=612x612&w=0&h=lQT9HuPFPwr4dZukNBVIqDcn9vxQDTYJ0mrtb2XCUy0=)'}">
+              <div class="league-price">Prix:</div>
+              <div class="title">
+            <span class="badge">
+              {{league.title}}
+            </span>
+              </div>
+              <div class="league-date"> Date:</div>
+              <div class="league-team-size">Taille des Equipes:</div>
+              <div class="league-region">Region:</div>
+              <div class="league-entry-fee">Frais d'entree</div>
+              <time></time>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ng-container>
+    <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
+      <h1>Error</h1>
+    </ng-container>
   </ng-container>
-  <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
-    <h1>Error</h1>
-  </ng-container>
-</ng-container>
+</ul>

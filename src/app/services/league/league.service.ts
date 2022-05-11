@@ -19,6 +19,11 @@ export class LeagueService {
     catchError(this.handleError)
   );
 
+  getUuidLeague$ = (uuidLeague: string) => <Observable<League>>this.http.get(`${this.apiUrl}/league/${uuidLeague}`).pipe(
+    tap(console.log),
+    catchError(this.handleError)
+  )
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.log(error)
     return throwError(`Une erreur est survenue - Code de l'erreur: ${error.status} `);

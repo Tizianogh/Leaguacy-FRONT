@@ -14,13 +14,16 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {CommonModule} from "@angular/common";
+import {ConnexionComponent} from './connexion/connexion.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,],
+    HomeComponent,
+    ConnexionComponent,],
   imports: [
     CommonModule,
     BrowserModule,
@@ -34,6 +37,7 @@ import {CommonModule} from "@angular/common";
     MatDividerModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

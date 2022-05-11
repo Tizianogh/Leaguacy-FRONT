@@ -6,6 +6,7 @@ import {StateEnum} from "../../../../enum/state.enum";
 import {LeagueService} from "../../../services/league/league.service";
 import {ToastService} from "../../../services/toast/toast.service";
 import {Response} from "../../../model/Response"
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-league',
@@ -19,7 +20,7 @@ export class ListLeagueComponent implements OnInit {
 
   private dataSubject = new BehaviorSubject<Response<League>>(null);
 
-  constructor(private leagueService: LeagueService, private toast: ToastService) {
+  constructor(private leagueService: LeagueService, private toast: ToastService, private router: Router) {
   }
 
   ngOnInit() {
@@ -36,4 +37,7 @@ export class ListLeagueComponent implements OnInit {
       );
   }
 
+  goToLeague(league: League) {
+    this.router.navigate([`/details/${league.uuidLeague}`])
+  }
 }
