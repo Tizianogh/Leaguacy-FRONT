@@ -7,6 +7,14 @@
     <div class="form">
       <label for="idSquadName" class="form-label">Create your own Team</label>
       <input type="text" class="form-control" id="idSquadName" placeholder="Pick a name for your Team" formControlName="squadName"
+<h1 class="text-center">Création équipe</h1>
+<br/>
+<div class="container square-box d-flex justify-content-center align-items-center">
+  <form [formGroup]="squadForm" class="row g-3" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="idSquadName" class="form-label">Nom d'équipe</label>
+
+      <input type="text" class="form-control" id="idSquadName" placeholder="Nom d'équipe" formControlName="squadName"
              [ngClass]="{ 'is-invalid': submitted && f.squadName.errors }">
     </div>
     <div *ngIf="submitted && f.squadName.errors" class="invalid-feedback">
@@ -23,4 +31,10 @@
 </section>
 <div>
   <p class="cachee">SALUT</p>
+</div>
+    <div class="text-center">
+      <button class="btn btn-primary mr-1">Créer</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+    </div>
+  </form>
 </div>
