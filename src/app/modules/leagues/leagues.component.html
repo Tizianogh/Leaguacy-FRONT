@@ -1,9 +1,26 @@
-<h2>LISTE DES LIGUES</h2>
+<h2 class="section-title">TROUVER UNE LIGUE</h2>
 
+<input class="search-bar" tabindex="0" placeholder="Rechercher une ligue" type="text" name="leagueSearch">
 <ul class = "leagues">
-  <li li *ngFor="let league of leagues">
+  <li *ngFor="let league of leagues" class="btn-league">
+    <div>
      <a routerLink="/detail/{{league.uuid}}" >
-      <span class="badge">{{league.uuid}}</span>{{league.title}}
-    </a>
+        <div class="league-wrapper" [ngStyle]="{'background-image': 'url(' + league.image + ')'}">
+          <div class="league-price">Prix:</div>
+          <div class="title">
+            <span class="badge" >
+              {{league.title}}
+            </span>
+          </div>
+
+            <div class="league-date"> Date:</div>
+            <div class="league-team-size">Taille des Equipes:</div>
+            <div class="league-region">Region:</div>
+            <div class="league-entry-fee">Frais d'entree</div>
+            <time></time>
+        </div>
+
+     </a>
+    </div>
   </li>
 </ul>

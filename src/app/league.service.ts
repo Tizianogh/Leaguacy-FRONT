@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { League} from "./league";
-import { LEAGUES} from "./mock-leagues";
-import {Observable, of} from "rxjs";
-import { MessageService} from "./message.service";
+import { League } from "./league";
+import { LEAGUES } from "./mock-leagues";
+import { Observable, of } from "rxjs";
+import { MessageService } from "./message.service";
 
 @Injectable({
   providedIn: 'root'
