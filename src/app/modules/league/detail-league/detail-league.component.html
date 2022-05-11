@@ -1,17 +1,22 @@
 <div class="league-info" *ngIf="league">
-  <h2>{{league.title | uppercase}} Détails</h2>
-  <div><span>id: </span> {{league.uuidLeague}}</div>
-  <div>
-    <label for="league-title">League Title:</label>
-    <input id="league-title" [(ngModel)]="league.title"
-           placeholder="League Title">
+  <div class="league-wrapper">
+    <div class="title">
+    {{league.title | uppercase}}
+    </div>
   </div>
-  <div *ngFor="let squad of league.squads">
-    {{squad.uuidSquad}}
-    {{squad.squadName}}
-    {{squad.created}}
-    {{squad.updated}}
+  <div class="teams-infos" *ngFor="let squad of league.squads; let index = index;">
+    <div class="number-squad">
+      {{index +1}}
+    </div>
+    <div class="id-squad">
+      {{squad.uuidSquad}}
+    </div>
+    <div class="squad-name">
+      {{squad.squadName}}
+    </div>
   </div>
+  <button class="btn-go-back" (click)="goBack()">
+    <span><i class="fa-solid fa-arrow-left"></i> retour</span>
+  </button>
 </div>
-<button type="button" (click)="goBack()">go back</button>
 

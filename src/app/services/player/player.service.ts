@@ -19,9 +19,9 @@ export class PlayerService {
   }
 
   login(player: Player) {
-    return this.http.post<Player>(`${this.apiUrl}/sign-in`, player)
+    return this.http.post<Player>(`${this.apiUrl}/connexion`, player)
       .pipe(map(user => {
-        console.log(user)
+        console.warn(user)
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         return user;

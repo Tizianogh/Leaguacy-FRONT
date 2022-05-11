@@ -8,14 +8,10 @@ import {FormsModule} from "@angular/forms";
 @NgModule({
   imports: [
     CommonModule,
-
-  ],
-  declarations: [
-    ListLeagueComponent
-
+    RouterModule
   ],
   exports: [
-    ListLeagueComponent, CommonModule
+    ListLeagueComponent, CommonModule,
     RouterModule,
     FormsModule,
     DetailLeagueComponent
@@ -23,7 +19,6 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     ListLeagueComponent,
     DetailLeagueComponent
-
   ]
 })
 export class LeagueModule {

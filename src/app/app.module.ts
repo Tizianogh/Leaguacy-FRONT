@@ -14,13 +14,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {CommonModule} from "@angular/common";
-
-import { AboutComponent } from './about/about.component';
-import {MatExpansionModule} from "@angular/material/expansion";
-
+import {AboutComponent} from './about/about.component';
 import {ConnexionComponent} from './connexion/connexion.component';
 import {FormsModule} from "@angular/forms";
-
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @NgModule({
@@ -30,22 +27,6 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     AboutComponent,
     ConnexionComponent,],
-    imports: [
-        CommonModule,
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        TeamModule,
-        MatSidenavModule,
-        MatButtonModule,
-        MatIconModule,
-        MatDividerModule,
-        HttpClientModule,
-        ToastrModule.forRoot(),
-        MatExpansionModule,
-    ],
-  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -60,6 +41,7 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     ToastrModule.forRoot(),
     FormsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
