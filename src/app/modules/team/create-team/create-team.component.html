@@ -1,12 +1,20 @@
-<h5>Modal</h5>
-<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Show"></p-button>
-<p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
-          [draggable]="false" [resizable]="false">
-  <div class="card">
-    <p-steps [model]="items"></p-steps>
-  </div>
-  <router-outlet></router-outlet>
-  <ng-template pTemplate="footer">
-    <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
-  </ng-template>
-</p-dialog>
+<h1 class="text-center">Création équipe</h1>
+<br/>
+<div class="container square-box d-flex justify-content-center align-items-center">
+  <form [formGroup]="squadForm" class="row g-3" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="idSquadName" class="form-label">Nom d'équipe</label>
+
+      <input type="text" class="form-control" id="idSquadName" placeholder="Nom d'équipe" formControlName="squadName"
+             [ngClass]="{ 'is-invalid': submitted && f.squadName.errors }">
+    </div>
+    <div *ngIf="submitted && f.squadName.errors" class="invalid-feedback">
+      <div *ngIf="f.squadName.errors.required">Le nom de l'équipe est requis</div>
+      <div *ngIf="f.squadName.errors.minlength">Le nom de l'équipe doit avoir au minimum 5 caractères</div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary mr-1">Créer</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="text-center">Liste des différentes ligues</h1>
+<br/>
+<ul class="leagues">
+  <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
+    <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
+      <li *ngFor="let league of appState.appData.data.results">
+        <div class="league">
+          <a routerLink="/details/{{league.uuidLeague}}">
+            <div class="league-wrapper">
+              <div class="title">
+            <span class="badge">
+              {{league.title}}
+            </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ng-container>
+    <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
+      <h1>Error</h1>
+    </ng-container>
+  </ng-container>
+</ul>

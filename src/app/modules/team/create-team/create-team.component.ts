@@ -1,76 +1,57 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {MenuItem, MessageService} from 'primeng/api';
-import {Subscription} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {SquadService} from "../../../services/squad/squad.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {BehaviorSubject} from "rxjs";
+import {Squad} from "../../../model/Squad";
+import {ToastService} from "../../../services/toast/toast.service";
 
 @Component({
   selector: 'app-create-team',
   templateUrl: './create-team.component.html',
-  providers: [MessageService],
-  styles: [`
-    .ui-steps .ui-steps-item {
-      width: 25%;
-    }
-
-    .ui-steps.steps-custom {
-      margin-bottom: 30px;
-    }
-
-    .ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
-      padding: 0 1em;
-      overflow: visible;
-    }
-
-    .ui-steps.steps-custom .ui-steps-item .ui-steps-number {
-      background-color: #0081c2;
-      color: #FFFFFF;
-      display: inline-block;
-      width: 36px;
-      border-radius: 50%;
-      margin-top: -14px;
-      margin-bottom: 10px;
-    }
-
-    .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
-      color: #555555;
-    }
-  `],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
-  items: MenuItem[];
+  // @ts-ignore
+  private dataSubject = new BehaviorSubject<Response<Squad>>(null);
+  submitted = false;
+  squadForm: FormGroup;
 
-  displayModal: boolean;
-
-  subscription: Subscription;
-
-  constructor(public messageService: MessageService) {
+  constructor(private squadService: SquadService, private _formBuilder: FormBuilder, private toast: ToastService) {
   }
-
-  showModalDialog() {
-    this.displayModal = true;
-  }
-
-  activeIndex: number = 0;
-
 
   ngOnInit() {
-    this.items = [{
-      label: 'Information',
-      routerLink: 'information'
-    }, {
-      label: 'Recapitulatif',
-      routerLink: 'recapitulatif'
-    }
-    ];
-
-    // this.subscription = this.ticketService.paymentComplete$.subscribe((personalInformation) =>{
-    // this.messageService.add({severity:'success', summary:'Order submitted', detail: 'Dear, ' + personalInformation.firstname + ' ' + personalInformation.lastname + ' your order completed.'});
-    // });
+    this.squadForm = this._formBuilder.group({
+      squadName: ['', [Validators.required, Validators.required, Validators.minLength(5)]],
+    })
   }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+  onSubmit() {
+    this.submitted = true;
+    if (this.squadForm.invalid) {
+      return;
     }
+
+    //@ts-ignore
+    let squad: Squad = {
+      squadName: this.squadForm.value.squadName
+    }
+
+    this.squadService.create$(squad).subscribe((squadValue) => {
+      this.dataSubject.next(squadValue);
+      this.toast.showSucces("L'équipe a bien été créée.")
+      this.onReset();
+    }, error => {
+      console.log("HERE"+error)
+      this.toast.showError("Une erreur est survenue.");
+    })
+  }
+
+  get f() {
+    return this.squadForm.controls;
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.squadForm.reset();
   }
 }

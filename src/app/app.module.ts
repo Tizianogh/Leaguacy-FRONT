@@ -11,6 +11,11 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+import {CommonModule} from "@angular/common";
+import {ConnexionComponent} from './connexion/connexion.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,8 +23,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     AppComponent,
     NavbarComponent,
     HomeComponent,
-  ],
+    ConnexionComponent,],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -29,7 +35,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-      ],
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
