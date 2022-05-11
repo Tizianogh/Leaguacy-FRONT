@@ -12,9 +12,11 @@ import {DetailLeagueComponent} from "./modules/league/detail-league/detail-leagu
     {path: 'home', component: HomeComponent, pathMatch: 'full'},
     {path: 'about', component: AboutComponent, pathMatch: 'full'},
     {path: 'squad/create', component: CreateTeamComponent},
-    {path: 'leagues', component: ListLeagueComponent, children: [
-        {path:'leagues', loadChildren: () => import('./modules/league/league.module').then(m => m.LeagueModule)}
-      ]},
+    {
+      path: 'leagues', component: ListLeagueComponent, children: [
+        {path: 'leagues', loadChildren: () => import('./modules/league/league.module').then(m => m.LeagueModule)}
+      ]
+    },
     {path: 'connexion', component: ConnexionComponent},
     {path: 'details/:uuidLeague', component: DetailLeagueComponent}
   ])],

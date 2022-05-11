@@ -4,16 +4,17 @@
   <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
     <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
       <li *ngFor="let league of appState.appData.data.results">
-        <div class="league">
-          <a routerLink="/details/{{league.uuidLeague}}">
-            <div class="league-wrapper">
-              <div class="title">
-            <span class="badge">
-              {{league.title}}
-            </span>
-              </div>
+        <div class="league" routerLink="/details/{{league.uuidLeague}}">
+          <div class="league-wrapper">
+            <div class="title">
+              <span class="badge">
+                {{league.title}}
+              </span>
             </div>
-          </a>
+          </div>
+          <div class="btn-view-more">
+            <span>VOIR PLUS <i class="fa-solid fa-angles-right"></i></span>
+          </div>
         </div>
       </li>
     </ng-container>
