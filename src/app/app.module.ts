@@ -18,6 +18,7 @@ import {AboutComponent} from './about/about.component';
 import {ConnexionComponent} from './connexion/connexion.component';
 import {FormsModule} from "@angular/forms";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { DialogJoinLeagueComponent } from './dialog-join-league/dialog-join-league.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ConnexionComponent,],
+    ConnexionComponent,
+    DialogJoinLeagueComponent,],
   imports: [
     CommonModule,
     BrowserModule,

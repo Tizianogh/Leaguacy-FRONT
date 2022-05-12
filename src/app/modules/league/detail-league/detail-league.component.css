@@ -81,6 +81,23 @@
   background-color:#FF6A00;
 }
 
+.btn-join-league{
+  border: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  margin: 10px;
+  color: #fff;
+  background-color:#800080FF;
+}
+.btn-join-league:hover{
+  color: #fff;
+  background-color: #3E063EFF;
+}
+
 .btn-go-back:hover{
   color: #fff;
   background-color: #cc5400;
