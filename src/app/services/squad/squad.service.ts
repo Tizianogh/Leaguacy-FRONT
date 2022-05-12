@@ -15,8 +15,8 @@ export class SquadService {
   constructor(private http: HttpClient) {
   }
 
-  create$ = (squad: Squad) => <Observable<Response<Squad>>>
-    this.http.post<Response<Squad>>(`${this.apiUrl}/squad/new`, squad)
+  create$ = (squad: Squad, uuidPlayer: string) => <Observable<Response<Squad>>>
+    this.http.post<Response<Squad>>(`${this.apiUrl}/squad/${uuidPlayer}/new`, squad)
       .pipe(
         tap(console.log),
         catchError(this.handleError)

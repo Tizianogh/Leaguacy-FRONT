@@ -34,8 +34,8 @@ export class ConnexionComponent implements OnInit {
 
     this.playerService.login(connexion as Player).pipe(first()).subscribe(
       res => {
+        this.router.navigate(['/home'])
         this.toastService.showSucces(`Bienvenue ${res[0].username}`);
-        this.router.navigate([''])
       }, err => {
         this.toastService.showError(err.error);
         connexionForm.resetForm();
