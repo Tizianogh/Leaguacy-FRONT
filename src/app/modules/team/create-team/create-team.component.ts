@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BehaviorSubject} from "rxjs";
 import {Squad} from "../../../model/Squad";
 import {ToastService} from "../../../services/toast/toast.service";
+import {PlayerService} from "../../../services/player/player.service";
 
 @Component({
   selector: 'app-create-team',
@@ -16,7 +17,7 @@ export class CreateTeamComponent implements OnInit {
   submitted = false;
   squadForm: FormGroup;
 
-  constructor(private squadService: SquadService, private _formBuilder: FormBuilder, private toast: ToastService) {
+  constructor(private player: PlayerService, private squadService: SquadService, private _formBuilder: FormBuilder, private toast: ToastService) {
   }
 
   ngOnInit() {
@@ -31,17 +32,20 @@ export class CreateTeamComponent implements OnInit {
       return;
     }
 
+    let uuid = this.player.currentUserValue.uuidPlayer;
+    console.warn(uuid)
+
     //@ts-ignore
     let squad: Squad = {
       squadName: this.squadForm.value.squadName
     }
 
-    this.squadService.create$(squad).subscribe((squadValue) => {
+    this.squadService.create$(squad, uuid).subscribe((squadValue) => {
       this.dataSubject.next(squadValue);
       this.toast.showSucces("L'équipe a bien été créée.")
       this.onReset();
     }, error => {
-      console.log("HERE"+error)
+      console.log("HERE" + error)
       this.toast.showError("Une erreur est survenue.");
     })
   }

@@ -19,10 +19,10 @@ export class PlayerService {
   }
 
   login(player: Player) {
-    return this.http.post<Player>(`${this.apiUrl}/connexion`, player)
+    return this.http.post<Player>(`${this.apiUrl}/user/check`, player)
       .pipe(map(user => {
-        console.warn(user)
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        //@ts-ignore
+        localStorage.setItem('currentUser', JSON.stringify(user.data.results));
         this.currentUserSubject.next(user);
         return user;
       }));

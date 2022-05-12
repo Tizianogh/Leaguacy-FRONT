@@ -13,7 +13,7 @@
         <div *ngIf="submitted && f.squadName.errors" class="invalid-feedback">
           <div *ngIf="f.squadName.errors.required">Le nom de l'équipe est requis</div>
           <div *ngIf="f.squadName.errors.minlength">Le nom de l'équipe doit avoir au minimum 5 caractères</div>
-        </div>
+
         <div class="buttons">
           <button class="button" type="reset" (click)="onReset()">Reset</button>
           <button class="button">Créer</button>
