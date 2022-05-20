@@ -1,0 +1,25 @@
+<h1 class="text-center">Choisissez votre Squad</h1>
+<br/>
+<ul class="leagues">
+  <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
+    <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
+      <li *ngFor="let squad of appState.appData.data.results">
+        <div class="squad" routerLink="/details/{{squad.uuidSquad}}">
+          <div class="squad-wrapper">
+            <div class="members">
+              <span class="badge">
+                {{squad.members}}
+              </span>
+            </div>
+          </div>
+          <div class="btn-view-more">
+            <span>VOIR PLUS <i class="fa-solid fa-angles-right"></i></span>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+    <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
+      <h1>Error</h1>
+    </ng-container>
+  </ng-container>
+</ul>

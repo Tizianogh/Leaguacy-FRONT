@@ -16,9 +16,10 @@ import {ToastrModule} from "ngx-toastr";
 import {CommonModule} from "@angular/common";
 import {AboutComponent} from './about/about.component';
 import {ConnexionComponent} from './connexion/connexion.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { DialogJoinLeagueComponent } from './dialog-join-league/dialog-join-league.component';
+import { UserSquadsListComponent } from './user-squads-list/user-squads-list.component';
 
 
 @NgModule({
@@ -28,23 +29,26 @@ import { DialogJoinLeagueComponent } from './dialog-join-league/dialog-join-leag
     HomeComponent,
     AboutComponent,
     ConnexionComponent,
-    DialogJoinLeagueComponent,],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    TeamModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-    FormsModule,
-    MatExpansionModule,
-  ],
+    DialogJoinLeagueComponent,
+    UserSquadsListComponent,
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        TeamModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDividerModule,
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        FormsModule,
+        MatExpansionModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
