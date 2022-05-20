@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {PlayerService} from "../services/player/player.service";
+import {Router} from "@angular/router";
+import {ToastService} from "../services/toast/toast.service";
 
 
 @Component({
@@ -8,8 +11,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   showFiller = false;
+  connected: boolean = false;
 
-  constructor() {
+
+  constructor(private playerService: PlayerService, private router: Router, private toastr: ToastService) {
   }
 
   openNav() {
@@ -24,4 +29,14 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isConnected() {
+    this.connected = this.playerService.isLoggedIn();
+    return this.connected;
+  }
+
+  logout() {
+    this.toastr.showSucces(`A bientôt`)
+    this.playerService.logout();
+    this.router.navigate(['/home'])
+  }
 }

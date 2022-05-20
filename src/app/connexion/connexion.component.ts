@@ -31,13 +31,12 @@ export class ConnexionComponent implements OnInit {
       password: connexionForm.value.pass,
     }
 
-
     this.playerService.login(connexion as Player).pipe(first()).subscribe(
       res => {
+        this.toastService.showSucces(`Welcome, ${connexion.username}`);
         this.router.navigate(['/home'])
-        this.toastService.showSucces(`Bienvenue ${res[0].username}`);
       }, err => {
-        this.toastService.showError(err.error);
+        this.toastService.showError(err.error.message);
         connexionForm.resetForm();
       }
     )

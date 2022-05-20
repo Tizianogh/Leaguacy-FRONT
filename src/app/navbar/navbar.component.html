@@ -13,9 +13,14 @@
     <em class="fa-solid fa-people-group"></em><br>Create Team</a>
   <a href="#">
     <em class="fa-solid fa-user"></em><br>Create an account</a>
-  <a routerLink="/connexion">
+  <a *ngIf="!isConnected()" routerLink="/connexion">
     <em class="fa-solid fa-arrow-right-to-bracket"></em>
     <br>Login</a>
+
+  <a *ngIf="isConnected()" (click)="logout()">
+    <em class="fa-solid fa-xmark"></em>
+    <br>Logout</a>
+
   <a href="/about">
     <em class="fa-solid fa-circle-question"></em>
     <br>About us </a>
