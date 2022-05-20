@@ -9,8 +9,10 @@
   <a routerLink="/leagues">
     <em class="fa-solid fa-trophy"></em>
     <br>Join tournament</a>
-  <a routerLink="squad/create">
+
+  <a *ngIf="isConnected()" routerLink="squad/create">
     <em class="fa-solid fa-people-group"></em><br>Create Team</a>
+
   <a href="#">
     <em class="fa-solid fa-user"></em><br>Create an account</a>
   <a *ngIf="!isConnected()" routerLink="/connexion">

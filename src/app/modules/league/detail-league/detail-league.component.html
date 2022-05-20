@@ -15,9 +15,9 @@
       {{squad.squadName}}
     </div>
   </div>
-  <button class="btn-join-league" (click)="joinLeague()">
-    <span>Rejoindre Ligue</span>
-  </button>
+    <button *ngIf="isConnected()" class="btn-join-league" (click)="joinLeague()">
+      <span>Rejoindre Ligue</span>
+    </button>
   <button class="btn-go-back" (click)="goBack()">
     <span><i class="fa-solid fa-arrow-left"></i> retour</span>
   </button>

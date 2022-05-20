@@ -5,8 +5,9 @@ import {LeagueService} from "../../../services/league/league.service";
 import {Location} from "@angular/common";
 import {BehaviorSubject} from "rxjs";
 import {Response} from "../../../model/Response";
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {DialogJoinLeagueComponent} from "../../../dialog-join-league/dialog-join-league.component";
+import {PlayerService} from "../../../services/player/player.service";
 
 @Component({
   selector: 'app-detail-league',
@@ -18,11 +19,13 @@ export class DetailLeagueComponent implements OnInit {
 
   private dataSubject = new BehaviorSubject<Response<League>>(null);
 
+  connected: boolean = false;
+
 
   constructor(private route: ActivatedRoute,
               private leagueService: LeagueService,
               private location: Location,
-              public dialog: MatDialog) {
+              public dialog: MatDialog, private playerService: PlayerService) {
   }
 
   ngOnInit() {
@@ -35,6 +38,11 @@ export class DetailLeagueComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  isConnected() {
+    this.connected = this.playerService.isLoggedIn();
+    return this.connected;
   }
 
   joinLeague() {
