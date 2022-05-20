@@ -5,6 +5,7 @@ import {BehaviorSubject} from "rxjs";
 import {Squad} from "../../../model/Squad";
 import {ToastService} from "../../../services/toast/toast.service";
 import {PlayerService} from "../../../services/player/player.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-team',
@@ -17,7 +18,7 @@ export class CreateTeamComponent implements OnInit {
   submitted = false;
   squadForm: FormGroup;
 
-  constructor(private player: PlayerService, private squadService: SquadService, private _formBuilder: FormBuilder, private toast: ToastService) {
+  constructor(private router: Router, private player: PlayerService, private squadService: SquadService, private _formBuilder: FormBuilder, private toast: ToastService) {
   }
 
   ngOnInit() {
@@ -27,6 +28,13 @@ export class CreateTeamComponent implements OnInit {
   }
 
   onSubmit() {
+
+    if (!this.player.isLoggedIn()) {
+      this.toast.showError("Vous devez être connecté pour pouvoir terminer votre commande!")
+      this.router.navigate(['/connexion'])
+      return;
+    }
+
     this.submitted = true;
     if (this.squadForm.invalid) {
       return;

@@ -4,7 +4,6 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Squad} from "../../model/Squad";
 import {catchError, Observable, tap, throwError} from "rxjs";
 import {Response} from "../../model/Response";
-import {League} from "../../model/League";
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,7 @@ export class SquadService {
   );
 
   create$ = (squad: Squad, uuidPlayer: string) => <Observable<Response<Squad>>>
-    this.http.post<Response<Squad>>(`${this.apiUrl}/details/${uuidPlayer}`, squad)
+    this.http.post<Response<Squad>>(`${this.apiUrl}/squad/${uuidPlayer}/new`, squad)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
